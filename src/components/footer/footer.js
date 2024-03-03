@@ -26,12 +26,6 @@ const Footer = () => (
         <img className="emoji" src="./images/emojis/rockon.png" alt="emoji"/>
           <span>2024</span>
       </div>
-      <div className="bottom credits">
-        <small>
-          Theme by
-          <a href="https://github.com/bchiang7/bchiang7.github.io" rel="noreferrer" target="_blank"> Brittany Chiang</a>
-        </small>
-      </div>
     </div>
     <div className="footer__links">
       {

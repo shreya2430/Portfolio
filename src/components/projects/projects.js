@@ -1,8 +1,8 @@
 import * as React from "react"
 import Parser from 'html-react-parser';
-import "./other-projects.scss"
+import "./projects.scss"
 
-const otherProjectsData = [
+const projectsData = [
   {
     "name": "Kitchen Chronicles",
     "url": "https://leafy-gumption-a6a15e.netlify.app/",
@@ -111,12 +111,12 @@ const otherProjectsData = [
   },
 ]
 
-const FeaturedProjects = () => (
+const Projects = () => (
   <section className="section other-projects">
     <div className="section__title">Projects</div>
     <div className="section__content">
       {
-        otherProjectsData.map((project) => (
+        projectsData.map((project) => (
           <div className="project">
             <div className="project__name">
               <a href={project.url} target="_blank" rel="noreferrer" className="arrow-link">{project.name}</a>
@@ -136,4 +136,4 @@ const FeaturedProjects = () => (
   </section>
 )
 
-export default FeaturedProjects
+export default Projects
