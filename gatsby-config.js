@@ -9,6 +9,12 @@ module.exports = {
     DEV_SSR: true
   },
   plugins: [
+    {
+      resolve: "gatsby-plugin-manifest",
+      options: {
+        "icon": "src/img/logo/logo.png"
+      }
+    },
     `gatsby-plugin-sass`,
   ],
 }

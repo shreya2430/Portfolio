@@ -4,7 +4,7 @@ const seoData = {
   "title": "Amod Dhopavkar",
   "description": "Amod Dhopavkar is budding Software Developer with a keen interest in data/ backend technologies.",
   "author": "Amod Dhopavkar",
-  "siteUrl": "https://kavin.varnan.me",
+  "siteUrl": "https://amoddhopavkar.me",
 }
 
 const Seo = () => (
