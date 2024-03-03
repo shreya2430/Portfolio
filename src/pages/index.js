@@ -22,7 +22,7 @@ const IndexPage = () => (
     <Background />
     <Skills />
     <Experience />
-    <FeaturedProjects />
+    {/*<FeaturedProjects />*/}
     <OtherProjects />
     <Footer />
   </>

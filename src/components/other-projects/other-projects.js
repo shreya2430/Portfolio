@@ -4,20 +4,18 @@ import "./other-projects.scss"
 
 const otherProjectsData = [
   {
-    "name": "GuessBuzz",
-    "url": "https://github.com/skavinvarnan/whistler-ios",
-    "description": "I developed a score prediction app for the IPL as a hobby project during the 2018 season. This app is available on both iOS and Android platforms. It allows users to make score predictions for IPL matches, adding an exciting and interactive element to the cricket-watching experience. <br> <a class='small' href='https://github.com/skavinvarnan/whistler-ios'>👨🏻‍💻Github Source Code👨🏻‍💻</a>",
+    "name": "Kitchen Chronicles",
+    "url": "https://leafy-gumption-a6a15e.netlify.app/",
+    "description": "I developed and launched a full-stack web application. I implemented a smooth user interface with features like searching and pagination. I built a database and API server to store and access data. I designed a responsive interface for seamless mobile and desktop use. I enabled secure user authentication to protect certain app features. I leveraged state management and routing tools for efficient data flow. I deployed the front and back-end on cloud platforms to make the site live and accessible. <br> <a class='small' href='https://github.com/amoddhopavkar2/kitchen-chronicles-react-app'>👨🏻‍💻Github Source Code👨🏻‍💻</a>",
     "used": [
-      {"thing": "Node.js"},
-      {"thing": "Firebase"},
-      {"thing": "iOS Native"},
-      {"thing": "Android Native"},
       {"thing": "MongoDB"},
-      {"thing": "Redis"},
-      {"thing": "Docker"},
-      {"thing": "Digital Ocean"},
-      {"thing": "Swift"},
-      {"thing": "Kotlin"},
+      {"thing": "Node.js"},
+      {"thing": "React.js"},
+      {"thing": "Express.js"},
+      {"thing": "Redux"},
+      {"thing": "Redux Hooks"},
+      {"thing": "JWT Authentication"},
+      {"thing": "REST APIs"},
     ]
   },
   {
@@ -123,7 +121,7 @@ const otherProjectsData = [
 
 const FeaturedProjects = () => (
   <section className="section other-projects">
-    <div className="section__title">Other Projects</div>
+    <div className="section__title">Projects</div>
     <div className="section__content">
       {
         otherProjectsData.map((project) => (

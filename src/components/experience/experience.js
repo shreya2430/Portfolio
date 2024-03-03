@@ -4,46 +4,34 @@ import "./experience.scss"
 
 const experienceData = [
   {
-    "company": "Talking Yak",
-    "url": "https://talkingyak.com/",
-    "time": "September 2019 - Present",
-    "position": "Consulting Head of Engineering"
+    "company": "Khoury College of Computer Sciences",
+    "url": "https://www.khoury.northeastern.edu/",
+    "time": "Jan 2023 - Present",
+    "position": "Graduate Teaching Assistant, Programming in C++"
   },
   {
-    "company": "Ather Energy",
-    "url": "https://www.atherenergy.com/",
-    "time": "Feb 2019 - September 2019",
-    "position": "Engineering Manager"
+    "company": "Addgene",
+    "url": "https://addgene.org/",
+    "time": "May 2023 - Dec 2023",
+    "position": "Software Engineer Intern, Backend"
   },
   {
-    "company": "Invaria - Willow",
-    "url": "https://onewillow.com/",
-    "time": "March 2018 - Feb 2019",
-    "position": "Senior Software Engineer"
+    "company": "Quantiphi Analytics",
+    "url": "https://quantiphi.com/",
+    "time": "Aug 2021 - Jun 2022",
+    "position": "Data Engineer"
   },
   {
-    "company": "Invaria - Proxfinity",
-    "url": "https://www.proxfinity.com/",
-    "time": "Jan 2016 - March 2018",
-    "position": "Software Engineer"
+    "company": "Veritas Technologies",
+    "url": "https://www.veritas.com/",
+    "time": "Aug 2020 - Mar 2021",
+    "position": "Software Engineer Intern, Systems"
   },
   {
-    "company": "TAAL Tech",
-    "url": "https://www.taaltech.com/",
-    "time": "June 2015 - Jan 2016",
-    "position": "Software Engineer"
-  },
-  {
-    "company": "Virtual Applets",
-    "url": "https://www.crunchbase.com/organization/virtual-applets",
-    "time": "Jan 2013 - June 2015",
-    "position": "Co-Founder"
-  },
-  {
-    "company": "Tringapps - HBO GO",
-    "url": "https://play.google.com/store/apps/details?id=sg.hbo.hbogo&hl=en&gl=US",
-    "time": "Dec 2011 - Jan 2013",
-    "position": "Research Analyst"
+    "company": "Pune Institute of Computer Technology",
+    "url": "https://pict.edu/",
+    "time": "Dec 2019 - May 2021",
+    "position": "Teaching Assistant, Object Oriented Design"
   },
 ]
 
