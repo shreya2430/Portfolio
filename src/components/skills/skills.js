@@ -9,7 +9,7 @@ const skillsData = {
   "toolsTitle": "Data Engineering",
   "tools": ["Hadoop MapReduce", "Apache Spark", "Apache Airflow", "Apache Kafka", "PySpark", "ETL Pipelines", "Data Warehousing"],
   "designTitle": "Cloud & Devops",
-  "design": ["Amazon Web Services", "Google Cloud Platform", "Docker", "Kubernetes", "Github Actions", "Jenkins", "CI/ CD"],
+  "design": ["Amazon Web Services", "Google Cloud Platform", "Docker", "Kubernetes", "Github Actions", "Ansible", "Terraform", "Jenkins", "CI/ CD"],
 }
 
 const Skills = () => (
