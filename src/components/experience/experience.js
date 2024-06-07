@@ -4,16 +4,22 @@ import "./experience.scss"
 
 const experienceData = [
   {
+    "company": "DataRobot Inc.",
+    "url": "https://www.datarobot.com/",
+    "time": "May 2024 - Present",
+    "position": "Software Engineering Intern"
+  },
+  {
+    "company": "Addgene Inc.",
+    "url": "https://addgene.org/",
+    "time": "May 2023 - Dec 2023",
+    "position": "Software Engineer"
+  },
+  {
     "company": "Khoury College of Computer Sciences",
     "url": "https://www.khoury.northeastern.edu/",
     "time": "Jan 2023 - Present",
     "position": "Graduate Teaching Assistant, Programming in C++"
-  },
-  {
-    "company": "Addgene",
-    "url": "https://addgene.org/",
-    "time": "May 2023 - Dec 2023",
-    "position": "Software Engineer Intern, Backend"
   },
   {
     "company": "Quantiphi Analytics",
@@ -25,13 +31,7 @@ const experienceData = [
     "company": "Veritas Technologies",
     "url": "https://www.veritas.com/",
     "time": "Aug 2020 - Mar 2021",
-    "position": "Software Engineer Intern, Systems"
-  },
-  {
-    "company": "Pune Institute of Computer Technology",
-    "url": "https://pict.edu/",
-    "time": "Dec 2019 - May 2021",
-    "position": "Teaching Assistant, Object Oriented Design"
+    "position": "Software Developer Intern"
   },
 ]
 
