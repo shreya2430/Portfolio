@@ -18,7 +18,7 @@ const experienceData = [
   {
     "company": "Khoury College of Computer Sciences",
     "url": "https://www.khoury.northeastern.edu/",
-    "time": "Jan 2023 - Present",
+    "time": "Jan 2023 - May 2024",
     "position": "Graduate Teaching Assistant, Programming in C++"
   },
   {
