@@ -7,7 +7,7 @@ const experienceData = [
     "company": "DataRobot Inc.",
     "url": "https://www.datarobot.com/",
     "time": "May 2024 - Present",
-    "position": "Software Engineering Intern"
+    "position": "Software Engineer Intern"
   },
   {
     "company": "Addgene Inc.",
@@ -31,7 +31,7 @@ const experienceData = [
     "company": "Veritas Technologies",
     "url": "https://www.veritas.com/",
     "time": "Aug 2020 - Mar 2021",
-    "position": "Software Developer Intern"
+    "position": "Software Engineer Intern"
   },
 ]
 
