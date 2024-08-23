@@ -6,7 +6,7 @@ const experienceData = [
   {
     "company": "DataRobot Inc.",
     "url": "https://www.datarobot.com/",
-    "time": "May 2024 - Present",
+    "time": "May 2024 - Aug 2024",
     "position": "Software Engineer Intern"
   },
   {
@@ -19,7 +19,7 @@ const experienceData = [
     "company": "Khoury College of Computer Sciences",
     "url": "https://www.khoury.northeastern.edu/",
     "time": "Jan 2023 - May 2024",
-    "position": "Graduate Teaching Assistant, Programming in C++"
+    "position": "Graduate Teaching Assistant"
   },
   {
     "company": "Quantiphi Analytics",
@@ -31,7 +31,7 @@ const experienceData = [
     "company": "Veritas Technologies",
     "url": "https://www.veritas.com/",
     "time": "Aug 2020 - Mar 2021",
-    "position": "Software Engineer Intern"
+    "position": "Software Engineer"
   },
 ]
 
