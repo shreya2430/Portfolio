@@ -1,3 +1,4 @@
+@import "src/scss/globals";
 :root {
   --bg-color: #ffffff;
   --text-color: #333333;
@@ -17,14 +18,12 @@ body.night {
 }
 
 .other-projects {
-  .section__title {
-    color: var(--text-color);
-  }
 
   .project {
     margin-bottom: 30px;
 
     &__name {
+      color: white;
       margin-bottom: 10px;
       font-size: 24px;
       font-weight: 700;
