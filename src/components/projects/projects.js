@@ -23,7 +23,7 @@ const projectsData = [
     "name": "Collaborative Code Editor",
     "description": [
       "Engineered a real-time collaborative coding environment where multiple users can simultaneously edit and debug code, fostering teamwork and productivity.",
-      "Leveraged WebSockets for instant communication and implemented syntax highlighting and code completion features to enhance the coding experience.• Engineered a real-time collaborative coding environment where multiple users can simultaneously edit and debug code, fostering teamwork and productivity. • Leveraged WebSockets for instant communication and implemented syntax highlighting and code completion features to enhance the coding experience.",
+      "Leveraged WebSockets for instant communication and implemented syntax highlighting and code completion features to enhance the coding experience.",
     ],
     "used": [
       {"thing": "WebSockets"},
@@ -32,7 +32,7 @@ const projectsData = [
       {"thing": "Prism.js"},
       {"thing": "Monaco Editor"},
     ]
-  }
+  },
   {
     "name": "E-Inventory Management System",
     "description": [
