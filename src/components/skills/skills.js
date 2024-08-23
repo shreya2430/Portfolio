@@ -3,13 +3,13 @@ import "./skills.scss"
 
 const skillsData = {
   "languagesTitle": "Languages",
-  "languages": ["Python", "Java", "C/ C++", "Javascript", "Typescript", "MySQL", "PostgreSQL", "Cassandra", "MongoDB"],
+  "languages": ["Python", "Java", "Javascript", "C++", "MySQL", "Scala", "SQL", "NoSQL"],
   "frameworksTitle": "Web Development",
-  "frameworks": ["React", "Node", "Angular", "Express", "Flask", "Django", "REST APIs"],
+  "frameworks": ["React", "Node", "Express", "Django", "Flask", "Streamlit", "RESTful APIs", "GraphQL"],
   "toolsTitle": "Data Engineering",
-  "tools": ["Hadoop MapReduce", "Apache Spark", "Apache Airflow", "Apache Kafka", "PySpark", "ETL Pipelines", "Data Warehousing"],
+  "tools": ["Spark", "Airflow", "MapReduce", "ETL", "Kafka"],
   "designTitle": "Cloud & Devops",
-  "design": ["Amazon Web Services", "Google Cloud Platform", "Docker", "Kubernetes", "Github Actions", "Ansible", "Terraform", "Jenkins", "CI/ CD"],
+  "design": ["Amazon Web Services", "Google Cloud Platform", "Docker", "Kubernetes", "CI/ CD Pipelines"],
 }
 
 const Skills = () => (
