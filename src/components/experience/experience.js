@@ -31,7 +31,7 @@ const experienceData = [
     "company": "Veritas Technologies",
     "url": "https://www.veritas.com/",
     "time": "Aug 2020 - Mar 2021",
-    "position": "Software Engineer"
+    "position": "Software Engineer Intern"
   },
 ]
 
