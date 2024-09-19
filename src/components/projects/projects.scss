@@ -23,7 +23,8 @@ body.night {
     margin-bottom: 30px;
 
     &__name {
-      color: white;
+      /* Set the specific color for project titles in light mode */
+      color: #36363c; 
       margin-bottom: 10px;
       font-size: 24px;
       font-weight: 700;
@@ -75,8 +76,12 @@ body.night {
   }
 }
 
-// Ensure links are visible in night mode
+// Ensure dark mode colors are kept unchanged
 body.night {
+  .other-projects .project__name {
+    color: var(--text-color); /* Keep the dark mode color unchanged */
+  }
+
   .other-projects a {
     color: var(--link-color);
   }
