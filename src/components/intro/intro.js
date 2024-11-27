@@ -8,8 +8,8 @@ const introData = {
   name: "Amod",
   afterName: ", a budding Software Developer with keen interest in data/ backend technologies.",
   contact: "Get in touch ",
-  email: "dhopavkar.am@northeastern.edu",
-  mailTo: "mailto:dhopavkar.am@northeastern.edu",
+  email: "amoddhopavkar2@gmail.com",
+  mailTo: "mailto:amoddhopavkar2@gmail.com",
   profileImage: profileImage,
 };
 
