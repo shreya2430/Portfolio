@@ -4,6 +4,12 @@ import "./experience.scss"
 
 const experienceData = [
   {
+    "company": "Goldman Sachs",
+    "url": "https://www.goldmansachs.com/",
+    "time": "Dec 2024 - Present",
+    "position": "Software Engineer"
+  },
+  {
     "company": "DataRobot Inc.",
     "url": "https://www.datarobot.com/",
     "time": "May 2024 - Aug 2024",
