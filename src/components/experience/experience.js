@@ -19,7 +19,7 @@ const experienceData = [
     "company": "Addgene Inc.",
     "url": "https://addgene.org/",
     "time": "May 2023 - Dec 2023",
-    "position": "Software Engineer"
+    "position": "Software Engineer Intern"
   },
   {
     "company": "Khoury College of Computer Sciences",
