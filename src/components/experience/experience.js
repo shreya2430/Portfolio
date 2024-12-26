@@ -4,40 +4,40 @@ import "./experience.scss"
 
 const experienceData = [
   {
-    "company": "Goldman Sachs",
+    "company": "Software Engineer",
     "url": "https://www.goldmansachs.com/",
     "time": "Dec 2024 - Present",
-    "position": "Software Engineer"
+    "position": "Goldman Sachs"
   },
   {
-    "company": "DataRobot Inc.",
+    "company": "Software Engineer Intern",
     "url": "https://www.datarobot.com/",
     "time": "May 2024 - Aug 2024",
-    "position": "Software Engineer Intern"
+    "position": "DataRobot"
   },
   {
-    "company": "Addgene Inc.",
+    "company": "Software Engineer Intern",
     "url": "https://addgene.org/",
     "time": "May 2023 - Dec 2023",
-    "position": "Software Engineer Intern"
+    "position": "Addgene"
   },
   {
-    "company": "Khoury College of Computer Sciences",
+    "company": "Graduate Teaching Assistant",
     "url": "https://www.khoury.northeastern.edu/",
     "time": "Jan 2023 - May 2024",
-    "position": "Graduate Teaching Assistant"
+    "position": "Khoury College of Computer Sciences"
   },
   {
-    "company": "Quantiphi Analytics",
+    "company": "Data Engineer",
     "url": "https://quantiphi.com/",
     "time": "Aug 2021 - Jun 2022",
-    "position": "Data Engineer"
+    "position": "Quantiphi Analytics"
   },
   {
-    "company": "Veritas Technologies",
+    "company": "Software Engineer Intern",
     "url": "https://www.veritas.com/",
     "time": "Aug 2020 - Mar 2021",
-    "position": "Software Engineer Intern"
+    "position": "Veritas Technologies"
   },
 ]
 
