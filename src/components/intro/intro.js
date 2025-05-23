@@ -6,7 +6,7 @@ const introData = {
   title: "Hello! ",
   beforeName: "I'm ",
   name: "Amod",
-  afterName: ", a budding Software Developer with keen interest in data/ backend technologies.",
+  afterName: " — a Software Engineer passionate about building scalable backend systems and solving complex engineering challenges.",
   contact: "Get in touch ",
   email: "amoddhopavkar2@gmail.com",
   mailTo: "mailto:amoddhopavkar2@gmail.com",
