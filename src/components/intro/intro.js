@@ -1,7 +1,6 @@
 import * as React from "react"
 import "./intro.scss"
 import profileImage from "../../img/profile.jpg"
-import resume from "../../../public/resume.pdf"
 
 const introData = {
   title: "Hello! ",
@@ -34,7 +33,7 @@ const Intro = () => {
 
   const downloadResume = () => {
     const link = document.createElement('a');
-    link.href = resume;
+    link.href = '/resume.pdf';
     link.download = 'Shreya_Wanisha_Resume.pdf';
     document.body.appendChild(link);
     link.click();
