@@ -4,7 +4,7 @@ const seoData = {
   "title": "Shreya Wanisha",
   "description": "Shreya Wanisha is budding full stack Developer with a keen interest in backend technologies.",
   "author": "Shreya Wanisha",
-  // "siteUrl": "https://amoddhopavkar.me",
+  // "siteUrl": "https://shreyawanisha.me",
 }
 
 const Seo = () => (

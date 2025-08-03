@@ -2,7 +2,7 @@
 
 This is the codebase for my personal portfolio website, showcasing my projects, experience, and resume. Built using **Gatsby**, a React-based framework, and deployed with **Netlify** for continuous integration and deployment (CI/CD).
 
-Check out the live website at: https://amoddhopavkar.com/
+Check out the live website at: https://shreyawanisha.com/
 
 
 ## Features
@@ -29,7 +29,7 @@ Make sure you have the following installed:
 1. **Clone the repository**
 
    ```bash
-   git clone https://github.com/amoddhopavkar2/Portfolio.git
+   git clone https://github.com/shreya2430/Portfolio.git
    cd Portfolio
 
 2. **Install Dependancies**
