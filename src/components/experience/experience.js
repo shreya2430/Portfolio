@@ -1,44 +1,25 @@
 import * as React from "react"
 import "./experience.scss"
 
-
 const experienceData = [
   {
-    "company": "Software Engineer",
-    "url": "https://www.goldmansachs.com/",
-    "time": "Dec 2024 - Present",
-    "position": "Goldman Sachs"
+    "company": "LabCorp",
+    "url": "https://www.labcorp.com/",
+    "time": "May 2025 - Present",
+    "position": "Software Engineer Intern"
   },
   {
-    "company": "Software Engineer Intern",
-    "url": "https://www.datarobot.com/",
-    "time": "May 2024 - Aug 2024",
-    "position": "DataRobot"
+    "company": "ThoughtWorks",
+    "url": "https://www.thoughtworks.com/",
+    "time": "Sept 2022 - Aug 2024",
+    "position": "Application Developer"
   },
   {
-    "company": "Software Engineer Intern",
-    "url": "https://addgene.org/",
-    "time": "May 2023 - Dec 2023",
-    "position": "Addgene"
-  },
-  {
-    "company": "Graduate Teaching Assistant",
-    "url": "https://www.khoury.northeastern.edu/",
-    "time": "Jan 2023 - May 2024",
-    "position": "Khoury College of Computer Sciences"
-  },
-  {
-    "company": "Data Engineer",
-    "url": "https://quantiphi.com/",
-    "time": "Aug 2021 - Jun 2022",
-    "position": "Quantiphi Analytics"
-  },
-  {
-    "company": "Software Engineer Intern",
-    "url": "https://www.veritas.com/",
-    "time": "Aug 2020 - Mar 2021",
-    "position": "Veritas Technologies"
-  },
+    "company": "MAQ Software",
+    "url": "https://maqsoftware.com/",
+    "time": "Sept 2021 - Aug 2022",
+    "position": "Data Engineer Intern"
+  }
 ]
 
 const Experience = () => (

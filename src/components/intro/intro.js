@@ -5,11 +5,11 @@ import profileImage from "../../img/profile.jpg"
 const introData = {
   title: "Hello! ",
   beforeName: "I'm ",
-  name: "Amod",
+  name: "Shreya",
   afterName: " — a Software Engineer passionate about building scalable backend systems and solving complex engineering challenges.",
   contact: "Get in touch ",
-  email: "amoddhopavkar2@gmail.com",
-  mailTo: "mailto:amoddhopavkar2@gmail.com",
+  email: "shreyawanisha1221@gmail.com",
+  mailTo: "mailto:shreyawanisha1221@gmail.com",
   profileImage: profileImage,
 };
 
@@ -55,7 +55,7 @@ const Intro = () => {
           </h3>
         </div>
         <div className="intro__image">
-          <img src={profileImage} alt="Amod Dhopavkar" className="profile-image" />
+          <img src={profileImage} alt="Shreya Wanisha" className="profile-image" />
         </div>
       </div>
     </header>

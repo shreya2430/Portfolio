@@ -3,61 +3,67 @@ import "./projects.scss"
 
 const projectsData = [
   {
-    "name": "Kitchen Chronicles",
-    "url": "https://amoddhopavkar-kitchenchronicles.netlify.app/search",
+    "name": "Parkbnb",
+    // "url": "https://amoddhopavkar-kitchenchronicles.netlify.app/search",
     "description": [
-      "Designed and developed a full-stack MERN (MongoDB, Express.js, React, Node.js) web application that allows users to browse, search, and save their favorite recipes.",
-      "Implemented user authentication, recipe creation and editing functionalities, and a personalized recipe feed to enhance user engagement and experience.",
+      "Designed and developed a full-stack (Java, SpringBoot, React, PostgreSQL) web application which is designed to simplify parking reservations",
+      "This application improve efficiency for rentees and renters, and provide a seamless user experience.",
+      "It addresses challenges in urban and high-traffic areas, offering features like parking spot search, geolocation services, secure payments, and user reviews.",
     ],
-    "githubUrl": "https://github.com/amoddhopavkar2/kitchen-chronicles-react-app",
+    "githubUrl": "https://github.com/shreya2430/Parkbnb",
+    "used": [
+      {"thing": "Java"},
+      {"thing": "SpringBoot"},
+      {"thing": "React"},
+      {"thing": "PostgreSQL"},
+      {"thing": "Google Maps API"},
+      {"thing": "Stripe payments"},
+    ]
+  },
+  {
+    "name": "TrueVoice",
+    "description": [
+      "TrueVoice is a user-friendly platform that revolutionizes how businesses collect and showcase customer testimonials. ",
+      "This intuitive solution streamlines the process of gathering authentic video and text testimonials, allowing companies to effortlessly capture the genuine voices of their satisfied customers.",
+      "With its easy-to-use interface, customizable collection forms, and seamless website integration, TrueVoice empowers businesses to leverage powerful social proof, build trust, and boost conversions."
+    ],
+    "githubUrl": "https://github.com/shreya2430/TrueVoices",
     "used": [
       {"thing": "MongoDB"},
       {"thing": "Node.js"},
       {"thing": "React"},
-      {"thing": "Express"},
-      {"thing": "Redux.js"},
-      {"thing": "REST APIs"},
+      {"thing": "Stripe"},
+      {"thing": "Vite PWA"},
     ]
   },
   {
-    "name": "Collaborative Code Editor",
+    "name": "PresenceHub - Attendance Management System",
     "description": [
-      "Engineered a real-time collaborative coding environment where multiple users can simultaneously edit and debug code, fostering teamwork and productivity.",
-      "Leveraged WebSockets for instant communication and implemented syntax highlighting and code completion features to enhance the coding experience.",
+      "Built a full-stack web-based Attendance Management System designed for educational institutions to streamline student attendance tracking.",
+      "The application provides role-based functionalities for Admins, Faculty, and Students, including QR-based attendance marking, detailed reporting, and secure authentication.",
     ],
+    "githubUrl": "https://github.com/shreya2430/PresenceHub",
     "used": [
-      {"thing": "WebSockets"},
-      {"thing": "Node.js"},
-      {"thing": "React"},
-      {"thing": "Prism.js"},
-      {"thing": "Monaco Editor"},
+      {"thing": "Spring Boot"},
+      {"thing": "MYSQL"},
+      {"thing": "JSP,"},
+      {"thing": "Bootstrap"},
+      {"thing": "AJAX"},
     ]
   },
   {
-    "name": "E-Inventory Management System",
+    "name": "Monte Carlo Tree Search Games – TicTacToe & Checkers",
     "description": [
-      "Built a scalable and efficient inventory management system deployed on AWS, leveraging RDS for reliable data storage and Flask for a RESTful API backend.",
-      "The system streamlines product tracking, order processing, and generates automated reports for data-driven insights.",
+      "This project implements TicTacToe and Checkers using the Monte Carlo Tree Search (MCTS) algorithm.",
+      "It includes complete game logic, a GUI built with Java Swing, benchmarking tools, and analysis of performance based on iteration counts.",
     ],
-    "used": [
-      {"thing": "Amazon Web Services (AWS)"},
-      {"thing": "SQL"},
-      {"thing": "Python"},
-      {"thing": "Flask"},
-    ]
-  },
-  {
-    "name": "MoneyMagnet: Stock Market Portfolio Management & Simulation",
-    "description": [
-      "Developed a Java application adhering to the MVC architectural pattern, providing users with real-time stock information and portfolio management capabilities.",
-      "Integrated the Alphavantage API for seamless data fetching and implemented comprehensive JUnit tests to ensure code quality and robustness.",
-    ],
+    "githubUrl": "https://github.com/shreya2430/TicTacToe-and-Checkers-using-MCTS",
     "used": [
       {"thing": "Java"},
       {"thing": "Java - Swing"},
       {"thing": "JUnit"},
-      {"thing": "REST APIs"},
-      {"thing": "Agile Methodologies"},
+      {"thing": "MCTS Algorithm"},
+      {"thing": "Benchmarking Tools"},
     ]
   },
 ]

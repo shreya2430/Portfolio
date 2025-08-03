@@ -3,13 +3,15 @@ import "./skills.scss"
 
 const skillsData = {
   "languagesTitle": "Languages",
-  "languages": ["Python", "Java", "Javascript", "C++", "MySQL", "Scala", "SQL", "NoSQL"],
-  "frameworksTitle": "Web Development",
-  "frameworks": ["React", "Node", "Express", "Django", "Flask", "Streamlit", "RESTful APIs", "GraphQL"],
+  "languages": ["Java", "C++", "Python", "TypeScript", "MySQL", "SQL", "NoSQL"],
+  "backendFrameworksTitle": "Backend Development",
+  "backendFrameworks": ["Spring Boot", "REST API", "gRPC", "Spring Batch", "Node.js"],
+  "frontendFrameworksTitle": "Frontend Development",
+  "frontendFrameworks": ["HTML5", "CSS3", "SCSS", "JavaScript", "React", "Tailwind CSS", "Shadcn/ui", "Bootstrap"],
   "toolsTitle": "Data Engineering",
-  "tools": ["Spark", "Airflow", "MapReduce", "ETL", "Kafka"],
+  "tools": ["Azure Databricks", "Azure Data Factory", "Synapse Analytics", "Azure DevOps"],
   "designTitle": "Cloud & Devops",
-  "design": ["Amazon Web Services", "Google Cloud Platform", "Docker", "Kubernetes", "CI/ CD Pipelines"],
+  "design": ["AWS (Lambda, DynamoDB, S3, OpenSearch)", "Docker", "Kubernetes", "Git", "CI/CD", "Grafana", "Prometheus"],
 }
 
 const Skills = () => (
@@ -18,28 +20,28 @@ const Skills = () => (
     <div className="section__content">
       <div className="skillz">
         <div className="skillz__category">
-          <div className="skillz__category__label">{skillsData.languagesTitle}</div>
-          <ul>
-            {skillsData.languages.map((data) => <li className="skillz__category__item">{data}</li>)}
-          </ul>
+          <span className="skillz__category__label">{skillsData.languagesTitle}:</span>
+          <span className="skillz__category__items">{skillsData.languages.join(", ")}</span>
         </div>
+
         <div className="skillz__category">
-          <div className="skillz__category__label">{skillsData.frameworksTitle}</div>
-          <ul>
-            {skillsData.frameworks.map((data) => <li className="skillz__category__item">{data}</li>)}
-          </ul>
+          <span className="skillz__category__label">{skillsData.backendFrameworksTitle}:</span>
+          <span className="skillz__category__items">{skillsData.backendFrameworks.join(", ")}</span>
         </div>
+
         <div className="skillz__category">
-          <div className="skillz__category__label">{skillsData.toolsTitle}</div>
-          <ul>
-            {skillsData.tools.map((data) => <li className="skillz__category__item">{data}</li>)}
-          </ul>
+          <span className="skillz__category__label">{skillsData.frontendFrameworksTitle}:</span>
+          <span className="skillz__category__items">{skillsData.frontendFrameworks.join(", ")}</span>
         </div>
+
         <div className="skillz__category">
-          <div className="skillz__category__label">{skillsData.designTitle}</div>
-          <ul>
-            {skillsData.design.map((data) => <li className="skillz__category__item">{data}</li>)}
-          </ul>
+          <span className="skillz__category__label">{skillsData.toolsTitle}:</span>
+          <span className="skillz__category__items">{skillsData.tools.join(", ")}</span>
+        </div>
+
+        <div className="skillz__category">
+          <span className="skillz__category__label">{skillsData.designTitle}:</span>
+          <span className="skillz__category__items">{skillsData.design.join(", ")}</span>
         </div>
       </div>
     </div>
