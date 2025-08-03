@@ -205,4 +205,18 @@
       }
     }
   }
+  .intro {
+    &__contact {
+      .download-btn {
+        @include transition;
+        font-weight: 400;
+        box-shadow: inset 0 -3px 0 $blue;
+        
+        &:hover {
+          box-shadow: inset 0 -3px 0 0 $blue;
+          color: $white;
+        }
+      }
+    }
+  }
 }

@@ -1,6 +1,7 @@
 import * as React from "react"
 import "./intro.scss"
 import profileImage from "../../img/profile.jpg"
+import resume from "../../../public/resume.pdf"
 
 const introData = {
   title: "Hello! ",
@@ -31,6 +32,15 @@ const Intro = () => {
     }, 1000);
   }, []);
 
+  const downloadResume = () => {
+    const link = document.createElement('a');
+    link.href = resume;
+    link.download = 'Shreya_Wanisha_Resume.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <header className="intro">
       <div className="intro__content">
@@ -45,7 +55,22 @@ const Intro = () => {
           </h2>
 
           <h3 className="intro__contact">
-            <a href="./resume.pdf" target="_blank" rel="noreferrer" className="arrow-link">View My Resume</a>
+            <button 
+              onClick={downloadResume} 
+              className="arrow-link download-btn" 
+              style={{
+                background: 'transparent', 
+                border: 'none', 
+                cursor: 'pointer', 
+                font: 'inherit', 
+                color: 'inherit',
+                padding: '2px 3px',
+                textDecoration: 'none',
+                display: 'inline-block'
+              }}
+            >
+              Download Resume
+            </button>
             <br />
             <span>{introData.contact}</span>
             <span className="emoji pointer"></span>
