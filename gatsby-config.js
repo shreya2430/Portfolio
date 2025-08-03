@@ -9,6 +9,19 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sass`,
     {
+      resolve: `gatsby-plugin-google-gtag`,
+      options: {
+        trackingIds: [
+          "G-7R1ZXC0DFM", // Your Google Analytics ID
+        ],
+        pluginConfig: {
+          head: false,
+          respectDNT: true,
+          exclude: ["/preview/**"],
+        },
+      },
+    },
+    {
       resolve: `gatsby-plugin-manifest`,
       options: {
         name: `Shreya Wanisha - Software Engineer`,
