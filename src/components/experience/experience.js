@@ -5,7 +5,7 @@ const experienceData = [
   {
     "company": "LabCorp",
     "url": "https://www.labcorp.com/",
-    "time": "May 2025 - Present",
+    "time": "May 2025 - Aug 2025",
     "position": "Software Engineer Intern"
   },
   {

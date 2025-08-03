@@ -7,7 +7,7 @@ const skillsData = {
   "backendFrameworksTitle": "Backend Development",
   "backendFrameworks": ["Spring Boot", "REST API", "gRPC", "Spring Batch", "Node.js"],
   "frontendFrameworksTitle": "Frontend Development",
-  "frontendFrameworks": ["HTML5", "CSS3", "SCSS", "JavaScript", "React", "Tailwind CSS", "Shadcn/ui", "Bootstrap"],
+  "frontendFrameworks": ["HTML5", "CSS3", "SCSS", "JavaScript", "React", "Tailwind CSS", "Shadcn/UI", "Bootstrap"],
   "toolsTitle": "Data Engineering",
   "tools": ["Azure Databricks", "Azure Data Factory", "Synapse Analytics", "Azure DevOps"],
   "designTitle": "Cloud & Devops",
