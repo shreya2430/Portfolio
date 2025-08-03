@@ -23,8 +23,8 @@ const Footer = () => (
       </div>
       <div className="bottom">
         <span>Shreya Wanisha</span>
-        <img className="emoji" src="./images/emojis/rockon.png" alt="emoji"/>
-          <span>2025</span>
+        {/* <img className="emoji" src="./images/emojis/rockon.png" alt="emoji"/> */}
+          <span> &copy; 2025</span>
       </div>
     </div>
     <div className="footer__links">

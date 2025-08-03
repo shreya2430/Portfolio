@@ -1,4 +1,5 @@
 @import "src/scss/globals";
+
 :root {
   --bg-color: #ffffff;
   --text-color: #333333;
@@ -18,16 +19,91 @@ body.night {
 }
 
 .other-projects {
+  
+  // Grid layout for project cards
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+  }
 
   .project {
-    margin-bottom: 30px;
+    margin-bottom: 0; // Reset since we're using grid gap
+    
+    // Enhanced card styling
+    &.project-card {
+      background: var(--bg-color);
+      border-radius: 15px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border: 1px solid rgba(0, 0, 0, 0.05);
+      
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+      }
+    }
+
+    // Image container
+    .project-image-container {
+      width: 100%;
+      height: auto; // Let height adjust to image ratio
+      min-height: 200px; // Minimum height for consistency
+      overflow: hidden;
+      cursor: pointer;
+      background: #f0f0f0; // Fallback background
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .project-image {
+      width: 100%;
+      height: auto; // Maintain aspect ratio
+      object-fit: contain; // Show full image without cropping
+      transition: transform 0.3s ease;
+      
+      &:hover {
+        transform: scale(1.02); // Smaller scale to avoid overflow
+      }
+    }
+
+    .project-content {
+      padding: 25px;
+    }
 
     &__name {
-      /* Set the specific color for project titles in light mode */
-      color: #36363c; 
+      color: #36363c; // Keep your existing color
       margin-bottom: 10px;
       font-size: 24px;
       font-weight: 700;
+      cursor: pointer;
+
+      .clickable-name {
+        position: relative;
+        transition: all 0.3s ease;
+        
+        &::after {
+          content: '';
+          position: absolute;
+          bottom: -3px;
+          left: 0;
+          width: 0;
+          height: 2px;
+          background: linear-gradient(135deg, #667eea, #764ba2);
+          transition: width 0.3s ease;
+        }
+        
+        &:hover {
+          color: #667eea;
+          
+          &::after {
+            width: 100%;
+          }
+        }
+      }
 
       a {
         text-decoration: none;
@@ -74,15 +150,205 @@ body.night {
       }
     }
   }
-}
 
-// Ensure dark mode colors are kept unchanged
-body.night {
-  .other-projects .project__name {
-    color: var(--text-color); /* Keep the dark mode color unchanged */
+  // Modal styles
+  .project-modal {
+    display: flex;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    align-items: center;
+    justify-content: center;
   }
 
-  .other-projects a {
-    color: var(--link-color);
+  .modal-content {
+    background: var(--bg-color);
+    border-radius: 20px;
+    width: 90%;
+    max-width: 700px;
+    max-height: 80vh;
+    overflow-y: auto;
+    position: relative;
+    animation: modalSlideIn 0.3s ease;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  }
+
+  @keyframes modalSlideIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9) translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  .close-btn {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1001;
+    color: #333;
+
+    &:hover {
+      background: white;
+      transform: scale(1.1);
+    }
+  }
+
+  .modal-image {
+    width: 100%;
+    height: auto; // Let height adjust to image ratio
+    object-fit: contain; // Show full image without cropping
+    max-height: 400px; // Prevent modal from getting too tall
+    background: #f0f0f0; // Background for letterboxing if needed
+  }
+
+  .modal-body {
+    padding: 30px;
+  }
+
+  .modal-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-color);
+  }
+
+  .modal-description {
+    color: var(--text-color);
+    line-height: 1.7;
+    margin-bottom: 25px;
+    padding-left: 0;
+
+    li {
+      margin-bottom: 10px;
+      list-style: none;
+      position: relative;
+      padding-left: 20px;
+
+      &::before {
+        content: "•";
+        position: absolute;
+        left: 0;
+        color: var(--bullet-color);
+        font-weight: bold;
+      }
+    }
+  }
+
+  .modal-tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 25px;
+  }
+
+  .modal-tech-tag {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 5px 12px;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  .modal-actions {
+    display: flex;
+    gap: 15px;
+  }
+
+  .modal-btn {
+    padding: 12px 25px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-block;
+    
+    &.btn-github {
+      background: #333;
+      color: white;
+      border: 2px solid #333;
+
+      &:hover {
+        background: transparent;
+        color: #333;
+        transform: translateY(-2px);
+      }
+    }
+  }
+}
+
+// Dark mode adjustments
+body.night {
+  .other-projects {
+    .project__name {
+      color: var(--text-color); // Keep dark mode color unchanged
+      
+      .clickable-name:hover {
+        color: #4da3ff; // Use dark mode link color for hover
+      }
+    }
+
+    .project-card {
+      background: var(--bg-color);
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .close-btn {
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+
+      &:hover {
+        background: rgba(0, 0, 0, 0.9);
+      }
+    }
+
+    .modal-btn.btn-github {
+      background: #555;
+      border-color: #555;
+
+      &:hover {
+        background: transparent;
+        color: #555;
+      }
+    }
+  }
+}
+
+// Responsive
+@media (max-width: 768px) {
+  .other-projects {
+    .projects-grid {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    .modal-content {
+      margin: 20px;
+      width: calc(100% - 40px);
+    }
+    
+    .modal-body {
+      padding: 20px;
+    }
   }
 }
