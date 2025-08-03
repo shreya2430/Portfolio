@@ -2,7 +2,7 @@
 
 This is the codebase for my personal portfolio website, showcasing my projects, experience, and resume. Built using **Gatsby**, a React-based framework, and deployed with **Netlify** for continuous integration and deployment (CI/CD).
 
-Check out the live website at: https://shreyawanisha.com/
+Check out the live website at: https://shreyawanisha-portfolio.netlify.app
 
 
 ## Features
