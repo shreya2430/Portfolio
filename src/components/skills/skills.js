@@ -3,7 +3,7 @@ import "./skills.scss"
 
 const skillsData = {
   "languagesTitle": "Languages",
-  "languages": ["Java", "C++", "Python", "TypeScript", "MySQL", "SQL", "NoSQL"],
+  "languages": ["Java", "C++", "Python", "TypeScript", "MySQL", "JavaScript"],
   "backendFrameworksTitle": "Backend Development",
   "backendFrameworks": ["Spring Boot", "REST API", "gRPC", "Spring Batch", "Node.js"],
   "frontendFrameworksTitle": "Frontend Development",
