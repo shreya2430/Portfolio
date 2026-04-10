@@ -1,23 +1,49 @@
 import * as React from "react"
+import "./background.scss"
 
-const backgroundData = {
-  title: "Background",
-  part1: "I'm a Software Developer with 2+ years of experience across backend development, cloud systems, and data engineering. I've worked on high-scale healthcare systems at LabCorp processing 70+ million records daily, while pursuing my Master's in Software Engineering Systems at Northeastern University.",
-  part2: "Previously, I worked as a Java Application Developer at ThoughtWorks, building scalable applications with Spring Boot and gRPC, achieving 90%+ test coverage and improving deployment efficiency by 30% through Kubernetes optimization.",
-  part2_5: "I also have experience as a Data Engineer at MAQ Software, where I built optimized ETL pipelines on Azure, resulting in 50% faster execution and significant cost savings.",
-  part3: "I love building backend systems that solve real-world problems, especially using Java, Spring Boot, AWS, and Kubernetes. I'm passionate about clean code, test-driven development, and delivering production-ready systems with performance and reliability in mind.",
-  part4: "Outside of tech, I enjoy reading non-fiction, cooking, hiking, and exploring new cities. Always happy to connect with folks interested in distributed systems, developer productivity, and impactful tech."
-};
+const pressFeatures = [
+  {
+    outlet: "Northeastern COE News",
+    outletShort: "Northeastern COE",
+    url: "https://coe.northeastern.edu/news/building-reliable-systems-through-experience/",
+    quote: "Working on systems at this scale required careful attention to performance, fault tolerance, and maintainability.",
+    label: "Building Reliable Systems Through Experience",
+  },
+]
 
 const Background = () => (
   <section className="section background">
-    <div className="section__title">{backgroundData.title}</div>
+    <div className="section__title">About</div>
     <div className="section__content">
-      <p>{backgroundData.part1}</p>
-      <p>{backgroundData.part2}</p>
-      <p>{backgroundData.part2_5}</p>
-      <p>{backgroundData.part3}</p>
-      <p>{backgroundData.part4}</p>
+      <p>
+        Backend engineer with <strong>2+ years of industry experience</strong> across high-scale systems, cloud-native infrastructure, and AI-driven automation. Currently pursuing a <strong>Master's in Software Engineering Systems (GPA 3.7) at Northeastern University</strong>, expected May 2026.
+      </p>
+      <p>
+        At <strong>LabCorp</strong>, I built a Spring Batch pipeline processing <strong>70M+ records/day</strong> and an AI automation service using AWS Lambda and Amazon Bedrock that deflected <strong>~40% of routine support emails</strong>. Before that, at <strong>ThoughtWorks</strong>, I shipped <strong>25+ production features</strong> on microservices with Java, Spring Boot, and gRPC — reducing incident detection time by <strong>40%</strong> and improving release speed by <strong>30%</strong> through Kubernetes and TDD practices (90%+ coverage).
+      </p>
+      <p>
+        I'm most at home designing distributed systems, cloud infrastructure on AWS, and high-throughput data pipelines — but I also enjoy building end-to-end products, as my hackathon and side projects show.
+      </p>
+      <p>
+        Outside of engineering, I read a lot of non-fiction, hike when Boston's weather cooperates, and I'm always up for a conversation about distributed systems, developer productivity, or impactful tech.
+      </p>
+
+      {/* Press / Featured */}
+      <div className="background__press">
+        {pressFeatures.map((item, idx) => (
+          <a
+            key={idx}
+            href={item.url}
+            target="_blank"
+            rel="noreferrer"
+            className="background__press-card"
+          >
+            <span className="background__press-card__outlet">{item.outletShort}</span>
+            <p className="background__press-card__quote">"{item.quote}"</p>
+            <span className="background__press-card__cta">Read article →</span>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 )

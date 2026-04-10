@@ -1,69 +1,54 @@
 @import "src/scss/globals";
 
 .contact {
-  .section__title {
-    // Uses your existing section title styling
-  }
 
   .contact__container {
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    max-width: 600px;
-    margin: 0 auto;
+    gap: 36px;
+    max-width: 560px;
 
-    @include tablet {
-      gap: 30px;
-    }
+    @include tablet { gap: 28px; }
   }
 
   .contact__info {
-    text-align: center;
-
     h3 {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       font-weight: 700;
-      margin-bottom: 15px;
-      // Uses your existing text color variables
+      margin: 0 0 10px;
+      color: $black;
     }
 
     p {
-      line-height: 1.6;
-      margin-bottom: 30px;
-      opacity: 0.9;
-      font-size: 1.1rem;
+      line-height: 1.65;
+      opacity: 0.75;
+      font-size: 0.95rem;
     }
   }
 
   .contact__details {
     display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-bottom: 35px;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: -4px;
 
-    @include tablet {
-      flex-direction: column;
-      align-items: center;
-      gap: 20px;
-    }
+    @include tablet { flex-direction: column; gap: 14px; }
   }
 
   .contact__item {
     display: flex;
-    flex-direction: column;
     align-items: center;
-    text-align: center;
     gap: 10px;
 
     .contact__icon {
-      font-size: 1.2rem;
-      width: 45px;
-      height: 45px;
+      font-size: 1rem;
+      width: 38px;
+      height: 38px;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: $blue;
-      border-radius: 50%;
+      background: rgba($blue, 0.1);
+      border-radius: 10px;
       flex-shrink: 0;
     }
 
@@ -71,133 +56,130 @@
       strong {
         display: block;
         font-weight: 600;
-        margin-bottom: 3px;
-        font-size: 1rem;
+        font-size: 0.82rem;
+        color: $grey;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        margin-bottom: 1px;
       }
 
       p {
-        margin: 0;
-        opacity: 0.8;
-        font-size: 0.95rem;
+        margin: 0 !important;
+        opacity: 1 !important;
+        font-size: 0.9rem;
+        font-weight: 500;
       }
     }
   }
 
   .contact__form {
     .form__group {
-      margin-bottom: 25px;
+      margin-bottom: 20px;
 
       label {
         display: block;
-        margin-bottom: 8px;
+        margin-bottom: 6px;
         font-weight: 600;
-        font-size: 0.95rem;
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+        color: $grey;
       }
 
       input,
       textarea {
         width: 100%;
-        padding: 12px 16px;
-        border: 2px solid rgba($blue, 0.2);
+        padding: 11px 14px;
+        border: 1.5px solid rgba($blue, 0.18);
         border-radius: 8px;
-        font-size: 1rem;
+        font-size: 0.95rem;
         @include transition;
         font-family: inherit;
+        background: rgba($blue, 0.025);
+        color: $black;
 
         &:focus {
           outline: none;
           border-color: $blue;
           box-shadow: 0 0 0 3px rgba($blue, 0.1);
+          background: #fff;
         }
 
-        &::placeholder {
-          opacity: 0.6;
-        }
+        &::placeholder { opacity: 0.45; }
       }
 
       textarea {
         resize: vertical;
-        min-height: 120px;
-        line-height: 1.5;
+        min-height: 110px;
+        line-height: 1.55;
       }
     }
 
     .form__submit {
       width: 100%;
-      padding: 15px;
+      padding: 13px;
       background: $blue;
       color: $white;
       border: none;
       border-radius: 8px;
-      font-size: 1rem;
-      font-weight: 600;
+      font-size: 0.95rem;
+      font-weight: 700;
       cursor: pointer;
       @include transition;
+      font-family: inherit;
+      box-shadow: 0 4px 14px rgba($blue, 0.3);
 
       &:hover:not(:disabled) {
-        background: darken($blue, 10%);
+        background: $blue-hover;
         transform: translateY(-2px);
-        box-shadow: 0 10px 20px rgba($blue, 0.3);
+        box-shadow: 0 6px 20px rgba($blue, 0.4);
       }
 
-      &:disabled {
-        opacity: 0.7;
-        cursor: not-allowed;
-      }
+      &:disabled { opacity: 0.65; cursor: not-allowed; }
     }
 
     .form__status {
-      margin-top: 15px;
-      padding: 12px 16px;
+      margin-top: 14px;
+      padding: 11px 14px;
       border-radius: 8px;
       font-weight: 500;
+      font-size: 0.9rem;
 
       &--success {
-        background: rgba($blue, 0.1);
-        color: darken($blue, 20%);
-        border: 1px solid rgba($blue, 0.3);
+        background: rgba($blue, 0.08);
+        color: darken(#7C3AED, 10%);
+        border: 1px solid rgba($blue, 0.2);
       }
 
       &--error {
-        background: rgba(red, 0.1);
-        color: red;
-        border: 1px solid rgba(red, 0.3);
+        background: rgba(#ef4444, 0.08);
+        color: darken(#ef4444, 10%);
+        border: 1px solid rgba(#ef4444, 0.2);
       }
     }
   }
 }
 
-// Dark mode compatibility (if you have night mode)
 body.night {
   .contact {
-    .contact__form {
-      .form__group {
-        input,
-        textarea {
-          background: rgba($white, 0.05);
-          border-color: rgba($white, 0.2);
-          color: $white;
+    .contact__info h3 { color: $off-white; }
 
-          &:focus {
-            border-color: $blue;
-          }
+    .contact__form .form__group {
+      label { color: $slate; }
 
-          &::placeholder {
-            color: rgba($white, 0.6);
-          }
-        }
-      }
+      input,
+      textarea {
+        background: rgba($blue-light, 0.05);
+        border-color: rgba($blue-light, 0.18);
+        color: $off-white;
 
-      .form__status {
-        &--success {
-          background: rgba($blue, 0.2);
-          color: lighten($blue, 20%);
+        &:focus {
+          border-color: $blue-light;
+          box-shadow: 0 0 0 3px rgba($blue-light, 0.12);
+          background: rgba($blue-light, 0.08);
         }
 
-        &--error {
-          background: rgba(red, 0.2);
-          color: lighten(red, 20%);
-        }
+        &::placeholder { color: rgba($off-white, 0.4); }
       }
     }
   }

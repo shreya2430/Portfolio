@@ -1,4 +1,5 @@
 @import "globals";
+
 html {
   box-sizing: border-box;
 }
@@ -10,7 +11,8 @@ html {
 }
 
 ::selection {
-  background: $yellow;
+  background: $accent;
+  color: $black;
 }
 
 html,
@@ -19,19 +21,22 @@ body {
   padding: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: $white;
-  color: $dark-grey;
+  background-color: $bg-light;
+  color: $black;
   font-family: $Apercu;
   line-height: 1.5;
   width: 100%;
+  counter-reset: section-num;
 
   &.night {
     background-color: $night;
     color: $slate;
+
     ::selection {
-      color: $black;
-      background: $yellow;
+      color: $night;
+      background: $blue-light;
     }
+
     .switch-wrapper {
       .sun {
         background: url('../img/switch/sun-white.svg') no-repeat center;
@@ -42,6 +47,7 @@ body {
         background-size: 100%;
       }
     }
+
     a,
     strong,
     .intro,
@@ -51,6 +57,7 @@ body {
     .status {
       color: $off-white;
     }
+
     .section__content .underline-link:after {
       background: $off-white;
     }
@@ -86,6 +93,10 @@ strong {
   color: $black;
 }
 
+body.night strong {
+  color: $off-white;
+}
+
 .emoji {
   display: inline-block;
   vertical-align: text-top;
@@ -94,22 +105,27 @@ strong {
   background-position: center;
 }
 
+// ── Sections ────────────────────────────────────────────
 .section {
   display: flex;
   justify-content: center;
-  padding: 100px 170px;
-  @include thirteen {
-    padding: 100px;
+  padding: 90px 170px;
+  counter-increment: section-num;
+
+  @include thirteen  { padding: 80px 100px; }
+  @include desktop   { padding: 60px 50px; }
+  @include tablet    { display: block; }
+  @include mobile    { padding: 50px 28px; }
+
+  // Alternate section bg for visual rhythm
+  &:nth-child(even) {
+    background-color: $bg-alt;
   }
-  @include desktop {
-    padding: 50px;
+
+  body.night &:nth-child(even) {
+    background-color: rgba(255,255,255,0.02);
   }
-  @include tablet {
-    display: block;
-  }
-  @include mobile {
-    padding: 50px 35px;
-  }
+
   &__title {
     flex-shrink: 0;
     width: 200px;
@@ -119,33 +135,54 @@ strong {
     text-align: right;
     font-weight: 700;
     letter-spacing: 2px;
-    @include desktop {
-      margin-right: 50px;
+    font-size: 0.78rem;
+    position: relative;
+
+    // Section number above title
+    &::before {
+      content: "0" counter(section-num);
+      display: block;
+      font-size: 0.6rem;
+      font-weight: 400;
+      letter-spacing: 0.18em;
+      opacity: 0.4;
+      margin-bottom: 5px;
+      color: $grey;
     }
-    @include little-desktop {
-      width: 150px;
-    }
+
+    @include desktop     { margin-right: 50px; }
+    @include little-desktop { width: 150px; }
     @include tablet {
       text-align: left;
       width: auto;
+
+      &::before {
+        display: inline;
+        margin-right: 8px;
+      }
     }
   }
+
   &__content {
     font-weight: 300;
     font-size: 1rem;
     width: 100%;
     max-width: 650px;
+
     @include tablet {
       padding-top: 30px;
       padding-left: 50px;
     }
     @include mobile {
-      padding-left: 30px;
+      padding-left: 24px;
     }
+
     p {
       margin-top: 0;
-      margin-bottom: 25px;
+      margin-bottom: 22px;
+      line-height: 1.7;
     }
+
     .underline-link {
       position: relative;
       display: inline-block;
@@ -174,6 +211,7 @@ strong {
   }
 }
 
+// ── Arrow link ───────────────────────────────────────────
 .arrow-link {
   @include transition;
   font-weight: 700;
@@ -208,6 +246,7 @@ strong {
   }
 }
 
+// ── Scroll-to-top ────────────────────────────────────────
 #top-button {
   @include transition;
   background: transparent;
@@ -219,25 +258,18 @@ strong {
   right: 10px;
   cursor: pointer;
   display: none;
-  @include desktop {
-    bottom: 20px;
-    right: 7px;
-    width: 35px;
-  }
-  @include mobile {
-    bottom: 15px;
-    right: 3px;
-  }
+
+  @include desktop { bottom: 20px; right: 7px; width: 35px; }
+  @include mobile  { bottom: 15px; right: 3px; }
 
   &:hover,
   &:focus {
     transform: translateY(-10px);
   }
-  img {
-    width: 100%;
-  }
+  img { width: 100%; }
 }
 
+// ── Scroll animations ────────────────────────────────────
 .waypoint {
   opacity: 0;
   transform: translate3d(0, 20px, 0);

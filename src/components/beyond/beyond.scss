@@ -1,0 +1,140 @@
+@import "src/scss/globals";
+
+.beyond {
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__intro {
+    font-size: 0.95rem;
+    font-style: italic;
+    opacity: 0.6;
+    margin: 0 0 24px !important;
+    line-height: 1.65;
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  &__card {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 18px 20px;
+    border-radius: 14px;
+    background: rgba($blue, 0.04);
+    border: 1px solid rgba($blue, 0.1);
+    transition: border-color 0.22s, background 0.22s, transform 0.22s, box-shadow 0.22s;
+
+    &:hover {
+      border-color: rgba($blue, 0.28);
+      background: rgba($blue, 0.07);
+      transform: translateX(5px);
+      box-shadow: 0 4px 20px rgba($blue, 0.08);
+    }
+
+    &__icon-wrap {
+      flex-shrink: 0;
+      width: 44px; height: 44px;
+      background: rgba($blue, 0.1);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    &__icon { font-size: 1.4rem; line-height: 1; }
+
+    &__body {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      flex: 1;
+      min-width: 0;
+    }
+
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    &__title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: $black;
+      line-height: 1.2;
+    }
+
+    &__org {
+      font-size: 0.73rem;
+      font-weight: 700;
+      color: $blue;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      margin-top: 2px;
+    }
+
+    &__period {
+      font-size: 0.72rem;
+      font-family: 'Inconsolata', monospace;
+      color: $grey;
+      white-space: nowrap;
+      margin-top: 2px;
+    }
+
+    &__detail {
+      font-size: 0.87rem;
+      line-height: 1.65;
+      opacity: 0.75;
+      margin: 0 !important;
+    }
+
+    // Event highlight tags (volunteering card)
+    &__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    &__tag {
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 3px 9px;
+      border-radius: 20px;
+      background: rgba($blue, 0.09);
+      color: $blue;
+      border: 1px solid rgba($blue, 0.15);
+    }
+  }
+}
+
+// ── Dark mode ─────────────────────────────────────────────
+body.night {
+  .beyond {
+    &__card {
+      background: rgba($blue-light, 0.05);
+      border-color: rgba($blue-light, 0.1);
+
+      &:hover {
+        border-color: rgba($blue-light, 0.28);
+        background: rgba($blue-light, 0.09);
+        box-shadow: 0 4px 20px rgba($blue-light, 0.08);
+      }
+
+      &__icon-wrap { background: rgba($blue-light, 0.12); }
+      &__title     { color: $off-white; }
+      &__org       { color: $blue-light; }
+      &__period    { color: $slate; }
+      &__tag       { background: rgba($blue-light, 0.1); color: $blue-light; border-color: rgba($blue-light, 0.2); }
+    }
+  }
+}

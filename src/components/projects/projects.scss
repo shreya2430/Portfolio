@@ -3,253 +3,318 @@
 :root {
   --bg-color: #ffffff;
   --text-color: #333333;
-  --link-color: #007bff;
-  --bullet-color: #007bff;
-  --tag-bg-color: #f8f9fa;
-  --tag-text-color: #6c757d;
+  --link-color: #7C3AED;
+  --bullet-color: #7C3AED;
+  --tag-bg-color: rgba(124, 58, 237, 0.08);
+  --tag-text-color: #6D28D9;
+  --tag-border: rgba(124, 58, 237, 0.18);
+  --card-border: rgba(124, 58, 237, 0.1);
+  --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
+  --card-shadow-hover: 0 12px 32px rgba(124, 58, 237, 0.15);
 }
 
 body.night {
-  --bg-color: #1a1a1a;
+  --bg-color: #1a0d2e;
   --text-color: #e0e0e0;
-  --link-color: #4da3ff;
-  --bullet-color: #4da3ff;
-  --tag-bg-color: #2a2a2a;
-  --tag-text-color: #b0b0b0;
+  --link-color: #A78BFA;
+  --bullet-color: #A78BFA;
+  --tag-bg-color: rgba(167, 139, 250, 0.12);
+  --tag-text-color: #C4B5D8;
+  --tag-border: rgba(167, 139, 250, 0.2);
+  --card-border: rgba(167, 139, 250, 0.12);
+  --card-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  --card-shadow-hover: 0 12px 32px rgba(124, 58, 237, 0.3);
 }
 
 .other-projects {
-  
-  // Grid layout for project cards
+
+  // ── Grid ──────────────────────────────────────────────
   .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
-    margin-top: 30px;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+    margin-top: 20px;
+    // Override section max-width so the grid can breathe
+    max-width: 100% !important;
   }
 
-  .project {
-    margin-bottom: 0; // Reset since we're using grid gap
-    
-    // Enhanced card styling
-    &.project-card {
-      background: var(--bg-color);
-      border-radius: 15px;
-      overflow: hidden;
-      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-      border: 1px solid rgba(0, 0, 0, 0.05);
-      
-      &:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
-      }
+  // ── Card ──────────────────────────────────────────────
+  .project-card {
+    background: var(--bg-color);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--card-border);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+
+    &:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--card-shadow-hover);
     }
 
-    // Image container
-    .project-image-container {
-      width: 100%;
-      height: auto; // Let height adjust to image ratio
-      min-height: 200px; // Minimum height for consistency
-      overflow: hidden;
-      cursor: pointer;
-      background: #f0f0f0; // Fallback background
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+    &--featured {
+      border-color: rgba($blue, 0.3);
+      box-shadow: var(--card-shadow), 0 0 0 1px rgba($blue, 0.15);
 
-    .project-image {
-      width: 100%;
-      height: auto; // Maintain aspect ratio
-      object-fit: contain; // Show full image without cropping
-      transition: transform 0.3s ease;
-      
-      &:hover {
-        transform: scale(1.02); // Smaller scale to avoid overflow
-      }
-    }
-
-    .project-content {
-      padding: 25px;
-    }
-
-    &__name {
-      color: #36363c; // Keep your existing color
-      margin-bottom: 10px;
-      font-size: 24px;
-      font-weight: 700;
-      cursor: pointer;
-
-      .clickable-name {
-        position: relative;
-        transition: all 0.3s ease;
-        
-        &::after {
-          content: '';
-          position: absolute;
-          bottom: -3px;
-          left: 0;
-          width: 0;
-          height: 2px;
-          background: linear-gradient(135deg, #667eea, #764ba2);
-          transition: width 0.3s ease;
-        }
-        
-        &:hover {
-          color: #667eea;
-          
-          &::after {
-            width: 100%;
-          }
-        }
-      }
-
-      a {
-        text-decoration: none;
-        color: var(--link-color);
-
-        &:hover {
-          text-decoration: underline;
-        }
-      }
-    }
-
-    &__description {
-      margin-bottom: 15px;
-      padding-left: 20px;
-
-      li {
-        margin-bottom: 5px;
-        position: relative;
-        color: var(--text-color);
-
-        &::before {
-          content: "•";
-          position: absolute;
-          left: -15px;
-          color: var(--bullet-color);
-        }
-      }
-    }
-
-    &__used {
-      display: flex;
-      flex-wrap: wrap;
-      margin-top: 10px;
-
-      &__item {
-        margin-right: 10px;
-        margin-bottom: 5px;
-        font-size: 14px;
-        font-weight: 500;
-        color: var(--tag-text-color);
-        background-color: var(--tag-bg-color);
+      .project-image-container::after {
+        content: "Featured";
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: $blue;
+        color: #fff;
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
         padding: 3px 8px;
-        border-radius: 3px;
+        border-radius: 20px;
       }
     }
   }
 
-  // Modal styles
+  // ── Image ─────────────────────────────────────────────
+  .project-image-container {
+    position: relative;
+    width: 100%;
+    height: 190px;
+    overflow: hidden;
+    background: #f0f2f8;
+    flex-shrink: 0;
+  }
+
+  .project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.35s ease;
+
+    .project-card:hover & {
+      transform: scale(1.04);
+    }
+  }
+
+  .project-tag {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.55);
+    color: #fff;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    padding: 3px 9px;
+    border-radius: 20px;
+    backdrop-filter: blur(4px);
+  }
+
+  // ── Card body ─────────────────────────────────────────
+  .project-content {
+    padding: 20px 20px 16px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .project__name {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 8px;
+    line-height: 1.3;
+  }
+
+  .project__summary {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    opacity: 0.75;
+    line-height: 1.55;
+    margin: 0 0 14px;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .project__used {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-bottom: 12px;
+
+    &__item {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--tag-text-color);
+      background: var(--tag-bg-color);
+      border: 1px solid var(--tag-border);
+      padding: 3px 9px;
+      border-radius: 20px;
+      white-space: nowrap;
+    }
+
+    &__more {
+      opacity: 0.6;
+    }
+  }
+
+  // ── Icon links row on card ─────────────────────────────
+  .project-links {
+    display: flex;
+    gap: 8px;
+    margin-top: auto;
+  }
+
+  .project-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 8px;
+    border: 1px solid var(--card-border);
+    background: var(--tag-bg-color);
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    color: var(--tag-text-color);
+
+    svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+
+    &:hover {
+      transform: translateY(-2px);
+    }
+
+    &--github:hover  { background: #24292e; color: #fff; border-color: #24292e; }
+    &--live:hover    { background: $blue;   color: #fff; border-color: $blue; }
+    &--demo:hover    { background: #e53935; color: #fff; border-color: #e53935; }
+    &--arch:hover    { background: #6d28d9; color: #fff; border-color: #6d28d9; }
+  }
+
+  // ── Modal overlay ─────────────────────────────────────
   .project-modal {
     display: flex;
     position: fixed;
+    inset: 0;
     z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8);
-    backdrop-filter: blur(5px);
+    background: rgba(0, 0, 0, 0.75);
+    backdrop-filter: blur(6px);
     align-items: center;
     justify-content: center;
+    padding: 20px;
   }
 
   .modal-content {
     background: var(--bg-color);
     border-radius: 20px;
-    width: 90%;
-    max-width: 700px;
-    max-height: 80vh;
+    width: 100%;
+    max-width: 680px;
+    max-height: 88vh;
     overflow-y: auto;
     position: relative;
-    animation: modalSlideIn 0.3s ease;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: modalIn 0.25s ease;
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35);
+    scrollbar-width: thin;
   }
 
-  @keyframes modalSlideIn {
-    from {
-      opacity: 0;
-      transform: scale(0.9) translateY(-20px);
-    }
-    to {
-      opacity: 1;
-      transform: scale(1) translateY(0);
-    }
+  @keyframes modalIn {
+    from { opacity: 0; transform: scale(0.93) translateY(-16px); }
+    to   { opacity: 1; transform: scale(1)    translateY(0); }
   }
 
   .close-btn {
     position: absolute;
-    right: 20px;
-    top: 20px;
-    background: rgba(255, 255, 255, 0.9);
+    right: 16px;
+    top: 16px;
+    width: 34px;
+    height: 34px;
     border: none;
     border-radius: 50%;
-    width: 35px;
-    height: 35px;
-    font-size: 18px;
+    font-size: 20px;
+    line-height: 1;
     cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
-    z-index: 1001;
-    color: #333;
+    transition: background 0.2s, transform 0.2s;
+    z-index: 10;
+    background: rgba(128, 128, 128, 0.15);
+    color: var(--text-color);
 
     &:hover {
-      background: white;
+      background: rgba(128, 128, 128, 0.3);
       transform: scale(1.1);
     }
   }
 
   .modal-image {
     width: 100%;
-    height: auto; // Let height adjust to image ratio
-    object-fit: contain; // Show full image without cropping
-    max-height: 400px; // Prevent modal from getting too tall
-    background: #f0f0f0; // Background for letterboxing if needed
+    height: 220px;
+    object-fit: cover;
+    background: #f0f2f8;
+    display: block;
   }
 
   .modal-body {
-    padding: 30px;
+    padding: 26px 28px 28px;
+  }
+
+  .modal-tag {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: $blue;
+    background: rgba($blue, 0.1);
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
   }
 
   .modal-title {
-    font-size: 1.8rem;
+    font-size: 1.55rem;
     font-weight: 700;
-    margin-bottom: 20px;
     color: var(--text-color);
+    margin: 0 0 6px;
+    line-height: 1.2;
+  }
+
+  .modal-role {
+    font-size: 0.85rem;
+    color: var(--text-color);
+    opacity: 0.65;
+    margin: 0 0 16px;
+
+    strong { opacity: 1; }
   }
 
   .modal-description {
-    color: var(--text-color);
-    line-height: 1.7;
-    margin-bottom: 25px;
-    padding-left: 0;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
 
     li {
-      margin-bottom: 10px;
-      list-style: none;
       position: relative;
-      padding-left: 20px;
+      padding-left: 18px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      line-height: 1.65;
+      color: var(--text-color);
 
       &::before {
-        content: "•";
+        content: "▸";
         position: absolute;
         left: 0;
-        color: var(--bullet-color);
-        font-weight: bold;
+        color: $blue;
+        font-size: 0.75rem;
+        top: 3px;
       }
     }
   }
@@ -257,98 +322,88 @@ body.night {
   .modal-tech-stack {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 25px;
+    gap: 7px;
+    margin-bottom: 22px;
   }
 
   .modal-tech-tag {
     background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
-    padding: 5px 12px;
-    border-radius: 15px;
-    font-size: 0.8rem;
-    font-weight: 500;
+    color: #fff;
+    padding: 4px 11px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
   }
 
+  // ── Modal action buttons ───────────────────────────────
   .modal-actions {
     display: flex;
-    gap: 15px;
+    flex-wrap: wrap;
+    gap: 10px;
   }
 
   .modal-btn {
-    padding: 12px 25px;
-    border-radius: 25px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 700;
     text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
-    display: inline-block;
-    
-    &.btn-github {
-      background: #333;
-      color: white;
-      border: 2px solid #333;
+    transition: all 0.2s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border: 2px solid transparent;
 
-      &:hover {
-        background: transparent;
-        color: #333;
-        transform: translateY(-2px);
-      }
+    &.btn-github {
+      background: #24292e;
+      color: #fff;
+      &:hover { background: #1a1e22; transform: translateY(-2px); }
+    }
+
+    &.btn-live {
+      background: $blue;
+      color: #fff;
+      &:hover { background: darken(#007bff, 10%); transform: translateY(-2px); }
+    }
+
+    &.btn-demo {
+      background: #e53935;
+      color: #fff;
+      &:hover { background: darken(#e53935, 10%); transform: translateY(-2px); }
+    }
+
+    &.btn-arch {
+      background: #6d28d9;
+      color: #fff;
+      &:hover { background: darken(#6d28d9, 10%); transform: translateY(-2px); }
     }
   }
 }
 
-// Dark mode adjustments
+// ── Dark mode overrides ────────────────────────────────
 body.night {
   .other-projects {
-    .project__name {
-      color: var(--text-color); // Keep dark mode color unchanged
-      
-      .clickable-name:hover {
-        color: #4da3ff; // Use dark mode link color for hover
-      }
-    }
-
-    .project-card {
-      background: var(--bg-color);
-      border-color: rgba(255, 255, 255, 0.1);
-    }
-
-    .close-btn {
-      background: rgba(0, 0, 0, 0.8);
-      color: white;
-
-      &:hover {
-        background: rgba(0, 0, 0, 0.9);
-      }
-    }
-
-    .modal-btn.btn-github {
-      background: #555;
-      border-color: #555;
-
-      &:hover {
-        background: transparent;
-        color: #555;
-      }
-    }
+    .project-image-container { background: #1e2040; }
+    .modal-image { background: #1e2040; }
   }
 }
 
-// Responsive
+// ── Responsive ────────────────────────────────────────
 @media (max-width: 768px) {
   .other-projects {
     .projects-grid {
       grid-template-columns: 1fr;
-      gap: 20px;
+      gap: 18px;
     }
-    
+
     .modal-content {
-      margin: 20px;
-      width: calc(100% - 40px);
+      max-height: 92vh;
     }
-    
+
     .modal-body {
-      padding: 20px;
+      padding: 18px 20px 22px;
     }
+
+    .modal-title { font-size: 1.3rem; }
   }
 }
