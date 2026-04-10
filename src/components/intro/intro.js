@@ -60,7 +60,10 @@ const PhotoCarousel = ({ photos }) => {
           key={idx}
           className={`intro__carousel__slide${idx === current ? " active" : ""}`}
         >
-          <img src={photo.src} alt={photo.caption} />
+          {/* Blurred background — same photo, fills the gap naturally */}
+          <img src={photo.src} alt="" className="intro__carousel__slide__bg" aria-hidden="true" />
+          {/* Foreground — full photo, no crop */}
+          <img src={photo.src} alt={photo.caption} className="intro__carousel__slide__fg" />
           <div className="intro__carousel__caption">
             <span className="intro__carousel__caption__org">{photo.org}</span>
             <p className="intro__carousel__caption__text">{photo.caption}</p>
