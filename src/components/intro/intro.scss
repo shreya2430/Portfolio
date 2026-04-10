@@ -305,15 +305,33 @@
       inset: 0;
       opacity: 0;
       transition: opacity 0.65s ease;
+      overflow: hidden;
 
       &.active { opacity: 1; z-index: 1; }
 
-      img {
+      // Blurred bg layer — covers gaps, same photo stretched + blurred
+      &__bg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        filter: blur(18px) brightness(0.55) saturate(1.2);
+        transform: scale(1.12); // prevent blur edges showing
+        display: block;
+      }
+
+      // Foreground — full photo, no crop
+      &__fg {
+        position: absolute;
+        inset: 0;
         width: 100%;
         height: 100%;
         object-fit: contain;
-        object-position: center center;
+        object-position: center;
         display: block;
+        z-index: 1;
       }
     }
 
@@ -323,7 +341,7 @@
       bottom: 0; left: 0; right: 0;
       padding: 48px 16px 14px;
       background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.25) 60%, transparent 100%);
-      z-index: 2;
+      z-index: 3;
 
       &__org {
         display: block;
