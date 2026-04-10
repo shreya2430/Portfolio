@@ -1,48 +1,83 @@
 import * as React from "react"
 import "./skills.scss"
 
-const skillsData = {
-  "languagesTitle": "Languages",
-  "languages": ["Java", "C++", "Python", "TypeScript", "MySQL", "JavaScript"],
-  "backendFrameworksTitle": "Backend Development",
-  "backendFrameworks": ["Spring Boot", "REST API", "gRPC", "Spring Batch", "Node.js"],
-  "frontendFrameworksTitle": "Frontend Development",
-  "frontendFrameworks": ["HTML5", "CSS3", "SCSS", "JavaScript", "React", "Tailwind CSS", "Shadcn/UI", "Bootstrap"],
-  "toolsTitle": "Data Engineering",
-  "tools": ["Azure Databricks", "Azure Data Factory", "Synapse Analytics", "Azure DevOps"],
-  "designTitle": "Cloud & Devops",
-  "design": ["AWS (Lambda, DynamoDB, S3, OpenSearch)", "Docker", "Kubernetes", "Git", "CI/CD", "Grafana", "Prometheus"],
-}
+const skillsData = [
+  {
+    category: "Languages",
+    items: ["Java", "Python", "SQL", "JavaScript", "TypeScript", "C++"],
+  },
+  {
+    category: "Backend",
+    items: [
+      "Spring Boot",
+      "Spring Batch",
+      "gRPC",
+      "REST APIs",
+      "Microservices",
+      "Node.js",
+      "FastAPI",
+    ],
+  },
+  {
+    category: "Cloud & Infra",
+    items: [
+      "AWS Lambda",
+      "EC2",
+      "S3",
+      "RDS",
+      "DynamoDB",
+      "OpenSearch",
+      "Bedrock",
+      "CloudWatch",
+      "Azure Data Factory",
+      "Azure Databricks",
+      "Terraform",
+      "Docker",
+      "Kubernetes",
+      "Packer",
+      "GitHub Actions",
+      "CI/CD",
+    ],
+  },
+  {
+    category: "Databases",
+    items: [
+      "PostgreSQL",
+      "MySQL",
+      "MongoDB",
+      "Redis",
+      "Elasticsearch",
+      "DynamoDB",
+      "SQL Server",
+    ],
+  },
+  {
+    category: "Testing & Observability",
+    items: ["JUnit", "Mockito", "TDD", "Grafana", "Prometheus"],
+  },
+  {
+    category: "Frontend",
+    items: ["React", "TypeScript", "Tailwind CSS", "HTML5", "CSS3", "Bootstrap"],
+  },
+]
 
 const Skills = () => (
   <section className="section skills">
     <div className="section__title">Skills</div>
     <div className="section__content">
       <div className="skillz">
-        <div className="skillz__category">
-          <span className="skillz__category__label">{skillsData.languagesTitle}:</span>
-          <span className="skillz__category__items">{skillsData.languages.join(", ")}</span>
-        </div>
-
-        <div className="skillz__category">
-          <span className="skillz__category__label">{skillsData.backendFrameworksTitle}:</span>
-          <span className="skillz__category__items">{skillsData.backendFrameworks.join(", ")}</span>
-        </div>
-
-        <div className="skillz__category">
-          <span className="skillz__category__label">{skillsData.frontendFrameworksTitle}:</span>
-          <span className="skillz__category__items">{skillsData.frontendFrameworks.join(", ")}</span>
-        </div>
-
-        <div className="skillz__category">
-          <span className="skillz__category__label">{skillsData.toolsTitle}:</span>
-          <span className="skillz__category__items">{skillsData.tools.join(", ")}</span>
-        </div>
-
-        <div className="skillz__category">
-          <span className="skillz__category__label">{skillsData.designTitle}:</span>
-          <span className="skillz__category__items">{skillsData.design.join(", ")}</span>
-        </div>
+        {skillsData.map((group, idx) => (
+          <div className="skillz__group" key={idx}>
+            <span className="skillz__category__label">{group.category}</span>
+            <div className="skillz__pills">
+              {group.items.map((item, i) => (
+                <span className="skillz__pill" key={i}>
+                  {item}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   </section>

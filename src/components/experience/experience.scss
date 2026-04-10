@@ -1,26 +1,131 @@
 @import "src/scss/globals";
+
 .experience {
   .jobs {
-    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+    margin-bottom: 0;
   }
+
   .job {
-    margin-bottom: 25px;
+    position: relative;
+    padding-left: 18px;
+    border-left: 2px solid rgba($blue, 0.2);
+    transition: border-color 0.2s;
+
+    &:hover {
+      border-left-color: $blue;
+    }
+
+    &--ta {
+      border-left-color: rgba($purple, 0.25);
+
+      &:hover {
+        border-left-color: $purple;
+      }
+
+      .job__position {
+        color: $purple;
+        opacity: 0.85;
+      }
+    }
+
     .time-place {
       display: flex;
       justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-bottom: 2px;
+
       @include mobile {
-        display: block;
+        flex-direction: column;
+        gap: 2px;
       }
     }
+
     &__company {
       font-weight: 700;
-    }
-    &__time {
-      font-size: 0.9rem;
-      font-family: 'Inconsolata', monospace;
-      @include mobile {
-        font-size: 0.8rem;
+      font-size: 0.95rem;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+
+        &:hover {
+          color: $blue;
+        }
       }
+    }
+
+    &__location {
+      font-weight: 400;
+      font-size: 0.85rem;
+      opacity: 0.55;
+    }
+
+    &__time {
+      font-size: 0.8rem;
+      font-family: "Inconsolata", monospace;
+      opacity: 0.6;
+      white-space: nowrap;
+    }
+
+    &__position {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: $blue;
+      margin-bottom: 10px;
+      opacity: 0.9;
+    }
+
+    &__bullets {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+
+      li {
+        position: relative;
+        padding-left: 14px;
+        font-size: 0.88rem;
+        line-height: 1.6;
+        opacity: 0.82;
+
+        &::before {
+          content: "▸";
+          position: absolute;
+          left: 0;
+          color: $blue;
+          font-size: 0.7rem;
+          top: 4px;
+        }
+      }
+    }
+  }
+}
+
+body.night {
+  .experience {
+    .job {
+      border-left-color: rgba(#6fa3ef, 0.2);
+
+      &:hover {
+        border-left-color: #6fa3ef;
+      }
+
+      &--ta {
+        border-left-color: rgba(#b085f5, 0.25);
+        &:hover { border-left-color: #b085f5; }
+        .job__position { color: #b085f5; }
+      }
+
+      &__position { color: #6fa3ef; }
+
+      &__bullets li::before { color: #6fa3ef; }
     }
   }
 }

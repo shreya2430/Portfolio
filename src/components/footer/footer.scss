@@ -1,94 +1,76 @@
 @import "src/scss/globals";
+
 .footer {
-  padding: 50px 80px;
+  padding: 48px 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  @include desktop {
-    padding: 50px;
-  }
-  @include weird-medium {
-    display: block;
-  }
-  @include mobile {
-    padding: 50px 30px;
-  }
+  background: rgba($blue, 0.04);
+  border-top: 1px solid rgba($blue, 0.1);
+
+  @include desktop    { padding: 40px 50px; }
+  @include weird-medium { display: block; text-align: center; }
+  @include mobile     { padding: 36px 28px; }
+
   &__copyright {
-    font-weight: 700;
-    width: 200px;
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: $grey;
+
     @include weird-medium {
-      width: auto;
-      text-align: center;
-      margin-bottom: 25px;
+      margin-bottom: 20px;
     }
+
     .top, .bottom {
-      @include weird-medium {
-        display: inline-block;
-      }
-      @include mobile {
-        display: block;
-      }
+      @include weird-medium { display: inline-block; }
+      @include mobile       { display: block; }
     }
-    .emoji {
-      width: 20px;
-      height: 20px;
-      margin: 0 3px;
-      vertical-align: text-bottom;
+
+    .bottom {
+      color: $blue;
     }
   }
+
   &__links {
-    @include weird-medium {
-      display: flex;
-      justify-content: center;
-    }
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    @include weird-medium { justify-content: center; }
+
     a {
       position: relative;
-      display: inline-block;
+      display: inline-flex;
+      align-items: center;
       color: $blue !important;
       text-transform: uppercase;
       font-weight: 700;
-      margin: 0 15px;
-      outline: none;
-      @include desktop {
-        margin: 0 10px;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      padding: 7px 12px;
+      border-radius: 6px;
+      transition: background 0.2s, color 0.2s;
+
+      &:hover {
+        background: rgba($blue, 0.08);
+        color: $blue-hover !important;
       }
-      &:after {
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        height: 1px;
-        background: $blue;
-        content: '';
-        opacity: 0;
-        transition: height 0.3s, opacity 0.3s, transform 0.3s;
-        transform: translateY(-5px);
-        //@include little-desktop {
-        //  display: none;
-        //}
-      }
-      &:hover:after,
-      &:focus:after {
-        height: 2px;
-        border-radius: 3px;
-        opacity: 1;
-        transform: translateY(0px);
-      }
-      .text {
-        font-size: 0.9rem;
-        display: inline;
-        letter-spacing: 1px;
-        //@include little-desktop {
-        //  display: none;
-        //}
-      }
+
+      .text { display: inline; }
     }
-    img {
-      display: none;
-      width: 22px;
-      @include little-desktop {
-        display: inline-block;
-      }
+  }
+}
+
+body.night {
+  .footer {
+    background: rgba($blue-light, 0.04);
+    border-top-color: rgba($blue-light, 0.1);
+
+    &__copyright { color: $slate; .bottom { color: $blue-light; } }
+
+    &__links a {
+      color: $blue-light !important;
+      &:hover { background: rgba($blue-light, 0.1); color: $off-white !important; }
     }
   }
 }
